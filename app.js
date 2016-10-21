@@ -1,11 +1,10 @@
 var express = require("express");
 var app     = express();
 var path    = require("path");
-
 var http=require('http');
 var fs=require('fs');
 var url=require('url');
-//var path=require('path');
+var path=require('path');
 var PORT=9090;
 //添加MIME类型
 var MIME_TYPE = {
@@ -33,7 +32,7 @@ var server = http.createServer(serverStatic);
 function serverStatic(req,res){
     var filePath;
     if(req.url==="/"){
-        filePath =  "index.html";
+        filePath =  "CSSTest.html";
     } else{
         filePath = "./" + url.parse(req.url).pathname;
     }
@@ -60,10 +59,6 @@ function serverStatic(req,res){
 
 server.listen(PORT);
 console.log("Server runing at port: " + PORT + ".");
-
-function send404(res){
-    res.end("<h1>404</h1><p>file not found</p>")
-}
 
 
 app.use(express.static(path.join(__dirname, 'public')));
