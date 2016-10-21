@@ -1,10 +1,11 @@
 var express = require("express");
 var app     = express();
 var path    = require("path");
+
 var http=require('http');
 var fs=require('fs');
 var url=require('url');
-var path=require('path');
+//var path=require('path');
 var PORT=9090;
 //添加MIME类型
 var MIME_TYPE = {
